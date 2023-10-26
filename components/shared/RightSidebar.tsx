@@ -3,27 +3,27 @@ import Link from "next/link";
 import React from "react";
 import RenderTag from "./RenderTag";
 const hotQuestions = [
-  { _id: 1, title: "How do I use express as a custom server ih NextJS?" },
-  { _id: 2, title: "Cascading deletes in SQLAlchemy?" },
-  { _id: 3, title: "How to Perfectly center a dic with tailwind?" },
+  { _id: "1", title: "How do I use express as a custom server ih NextJS?" },
+  { _id: "2", title: "Cascading deletes in SQLAlchemy?" },
+  { _id: "3", title: "How to Perfectly center a dic with tailwind?" },
   {
-    _id: 4,
+    _id: "4",
     title: "Best practices for data fetching in a next.js app with ssr?",
   },
-  { _id: 5, title: "Redux toolkit not updating state as expected" },
+  { _id: "5", title: "Redux toolkit not updating state as expected" },
 ];
 
 const popularTags = [
-  { _id: 1, name: "javascript", count: 100 },
-  { _id: 2, name: "react", count: 100 },
-  { _id: 3, name: "nodejs", count: 100 },
-  { _id: 4, name: "nextjs", count: 100 },
-  { _id: 5, name: "express", count: 100 },
-  { _id: 6, name: "python", count: 100 },
-  { _id: 7, name: "sql", count: 100 },
-  { _id: 8, name: "mongodb", count: 100 },
-  { _id: 9, name: "tailwindcss", count: 100 },
-  { _id: 10, name: "redux", count: 100 },
+  { _id: "1", name: "javascript", count: 100 },
+  { _id: "2", name: "react", count: 100 },
+  { _id: "3", name: "nodejs", count: 100 },
+  { _id: "4", name: "nextjs", count: 100 },
+  { _id: "5", name: "express", count: 100 },
+  { _id: "6", name: "python", count: 100 },
+  { _id: "7", name: "sql", count: 100 },
+  { _id: "8", name: "mongodb", count: 100 },
+  { _id: "9", name: "tailwindcss", count: 100 },
+  { _id: "10", name: "redux", count: 100 },
 ];
 const RightSidebar = () => {
   return (
