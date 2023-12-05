@@ -17,7 +17,7 @@ const Navbar = () => {
           alt="medflow"
         />
         <p className="h2-bold font-spaceGrotesk text-dark-100 dark:text-light-900 max-sm:hidden">
-          Med<span className="text-primary-500">Flow</span>
+          Rume<span className="text-primary-500">Flow</span>
         </p>
       </Link>
       <GlobalSearch />
