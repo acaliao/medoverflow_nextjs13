@@ -67,6 +67,7 @@ export async function deleteUser(params: DeleteUserParams) {
     // TODO: delete all comments on user's posts
 
     const deletedUser = await User.findOneAndDelete(user._id);
+    console.log(userQuestionIds);
     return deletedUser;
   } catch (error) {
     console.log("=> error updating user to database:", error);
