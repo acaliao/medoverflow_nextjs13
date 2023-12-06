@@ -12,7 +12,7 @@ export const connectToDatabase = async () => {
     return console.log("=> using existing database connection");
   }
   try {
-    await mongoose.connect(process.env.MONGODB_URL, {
+    await mongoose.connect(process.env.MONGODB_URL ?? "", {
       dbName: "medflow",
     });
     isConnected = true;
