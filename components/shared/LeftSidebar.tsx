@@ -3,7 +3,6 @@ import { sidebarLinks } from "@/constants";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { SheetClose } from "../ui/sheet";
 import { SignedOut } from "@clerk/nextjs";
 import { Button } from "../ui/button";
 
