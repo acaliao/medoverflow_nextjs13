@@ -59,14 +59,14 @@ export async function deleteUser(params: DeleteUserParams) {
       throw new Error("User not found");
     }
     // delete user from database along with all their posts
-    const userQuestionIds = await Question.find({ author: user._id }).distinct(
+    const userQuestionIds = await Question.find({ author: clerkId }).distinct(
       "_id"
     );
 
-    await Question.deleteMany({ author: user._id });
+    await Question.deleteMany({ author: clerkId });
     // TODO: delete all comments on user's posts
 
-    const deletedUser = await User.findOneAndDelete(user._id);
+    const deletedUser = await User.findOneAndDelete({ clerkId });
     console.log(userQuestionIds);
     return deletedUser;
   } catch (error) {
