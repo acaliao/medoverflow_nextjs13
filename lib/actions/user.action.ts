@@ -5,6 +5,7 @@ import { connectToDatabase } from "../mongoose";
 import {
   CreateUserParams,
   DeleteUserParams,
+  GetAllUsersParams,
   UpdateUserParams,
 } from "./shared.types";
 import { revalidatePath } from "next/cache";
@@ -17,7 +18,7 @@ export async function getUserById(params: any) {
     const user = await User.findOne({ clerkId: userId });
     return user;
   } catch (error) {
-    console.log("=> error connecting to database:", error);
+    console.log("=> error connecting to database for get user by id", error);
     throw error;
   }
 }
@@ -28,7 +29,7 @@ export async function createUser(userData: CreateUserParams) {
     const newUser = await User.create(userData);
     return newUser;
   } catch (error) {
-    console.log("=> error connecting to database:", error);
+    console.log("=> error connecting to database for create user", error);
     throw error;
   }
 }
@@ -70,7 +71,19 @@ export async function deleteUser(params: DeleteUserParams) {
     console.log(userQuestionIds);
     return deletedUser;
   } catch (error) {
-    console.log("=> error updating user to database:", error);
+    console.log("=> error updating user to database for delete user", error);
+    throw error;
+  }
+}
+
+export async function getAllUsers(params: GetAllUsersParams) {
+  try {
+    connectToDatabase();
+    // const { page = 1, pageSize = 20, filter, searchQuery } = params;
+    const users = await User.find({}).sort({ createdAt: -1 });
+    return { users };
+  } catch (error) {
+    console.log("=> error connecting to database for get all users", error);
     throw error;
   }
 }
