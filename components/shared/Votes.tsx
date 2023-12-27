@@ -32,6 +32,7 @@ const Votes = ({
   hasSaved,
 }: Props) => {
   const pathname = usePathname();
+  // eslint-disable-next-line no-unused-vars
   const router = useRouter();
   const handleSave = () => {};
   const handleVote = async (action: string) => {
