@@ -32,7 +32,8 @@ export async function getTopInteractedTags(params: GetTopInteractedTagsParams) {
 export async function getAllTags(params: GetAllTagsParams) {
   try {
     connectToDatabase();
-    const { page, pageSize, filter, searchQuery } = params;
+    // eslint-disable-next-line no-unused-vars
+    const { page = 0, pageSize = 10, filter, searchQuery } = params;
     const tags = await Tag.find({})
       .skip(page * pageSize)
       .limit(pageSize)
